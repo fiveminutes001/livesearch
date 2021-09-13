@@ -229,7 +229,7 @@ include "php/connect.php";
             filter = input.value.toLowerCase();
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
-
+            console.log(li);
             if (filter == '') {
                 for (i = 0; i < li.length; i++) {
                     li[i].classList.remove('w3-show');
@@ -238,7 +238,7 @@ include "php/connect.php";
             } else {
                 for (i = 0; i < li.length; i++) {
                     if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        //li[i].style.display = 'block';
+                        
                         li[i].classList.remove('w3-hide');
                         li[i].classList.add('w3-show');
                     } else {
