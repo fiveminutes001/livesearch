@@ -89,7 +89,7 @@ include "php/connect.php";
                     <h2 style="margin: 5px">Results</h2>
                     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..." />
                 </div>
-
+                <div id="livesearch"></div>
                 <ul id="myMenu"></ul>
             </div>
             <br />
@@ -229,7 +229,18 @@ include "php/connect.php";
             filter = input.value.toLowerCase();
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
-            console.log(li);
+            
+            //sending AJAX request
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.onreadystatechange=function() {
+                if (this.readyState==4 && this.status==200) {
+                document.getElementById("livesearch").innerHTML=this.responseText;
+                document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+                }
+            }
+            xmlhttp.open("GET","livesearch.php?q="+filter,true);
+            xmlhttp.send();
+
             if (filter == '') {
                 for (i = 0; i < li.length; i++) {
                     li[i].classList.remove('w3-show');
