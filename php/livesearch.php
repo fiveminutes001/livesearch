@@ -4,6 +4,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
+//GET FUNCTION TO GET DB DETAILS FROM FAR FILE//OUTPUT 00
+include "php/connect.php";
+
 //get the q parameter from URL
 $q=$_GET["q"];
 
