@@ -5,9 +5,9 @@ $sql="SELECT username FROM playground_demo_all_data WHERE full_name LIKE '%".$q.
 $result = mysqli_query($con,$sql);
 echo '<pre>';
 var_dump($sql);
+var_dump($result);
 
 while($row = mysqli_fetch_array($result)) {
-echo count($row);
 var_dump($row);}
 
 var_dump($con);
