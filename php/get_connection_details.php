@@ -1,8 +1,8 @@
 <?php
 
 //ERROR DISPLAY
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
 
 //VARS - NONE
 
@@ -11,7 +11,7 @@ ini_set('display_errors', 'On');
 //FUNCTIONS
 
 //OPENING FAR TEXT FILE
-// - GETS USER CODE AND VAR OF NO USE
+// - GETS PATH'S DIRECTORY
 // - OPENS FAR FILE AND COPIES DB DETAILS TO ARRAY
 // - RETURNS DB DETAILS ARRAY
 
