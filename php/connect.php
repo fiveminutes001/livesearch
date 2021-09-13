@@ -14,11 +14,6 @@ include "get_connection_details.php";
 $path = 'data';
 $db_details = getfile($path);
 
-//CONNECTING TO DATABASE
-// $host = 'localhost';
-// $username = 'elad189g_homeTestUser';
-// $password = 'GD7LLCE2X86capB';
-// $db = 'elad189g_HomeTest';
 $host = $db_details[0];
 $username = $db_details[1];
 $password = $db_details[2];

@@ -17,13 +17,13 @@ ini_set('display_errors', 'On');
 
 function getfile($path)
 {
-    //VAR
+    //VARS
     $dir = 'hometest';
-
+    $main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
     //OPENING FILE
-    $myfile = fopen("../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/" . $dir . "/$path.txt", "r") or die("Unable to open file!");
+    $myfile = fopen($main_path . $dir . "/$path.txt", "r") or die("Unable to open file!");
     //GETTING FILE CONTENT//OUTPUT 01
-    $r = file_get_contents("../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/" . $dir . "/$path.txt");
+    $r = file_get_contents($main_path . $dir . "/$path.txt");
     //CLOSING FILE
     fclose($myfile);
     //SPLITTING BY SPACES
