@@ -17,9 +17,9 @@ $con = mysqli_connect($host, $username, $password, $db);
 
 //CHECKING CONNECTION
 if ($con) {
-    $check_mark = '<i class="fas fa-check" style="font-size:24px;color:green;"></i>';
+    $check_mark = '<i class="fas fa-check" style="font-size:12px;color:green;"></i>';
 } else {
-    $check_mark = '<i class="fas fa-times" style="font-size:24px;color:red;"></i>';
+    $check_mark = '<i class="fas fa-times" style="font-size:12px;color:red;"></i>';
 }
 
 //SELECTING DATABASE
