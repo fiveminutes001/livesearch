@@ -7,7 +7,7 @@ include "get_connection_details.php";
 $path = 'data';
 $db_details = getfile($path);
 
-$host = $db_details[0];
+$host = 'l';
 $username = $db_details[1];
 $password = $db_details[2];
 $db = $db_details[3];
@@ -18,9 +18,8 @@ $con = mysqli_connect($host, $username, $password, $db);
 //CHECKING CONNECTION
 if ($con) {
     $check_mark = '<i class="fas fa-check" style="font-size:24px;color:green;"></i>';
-    $con_status = 'connection ok';
 } else {
-    die('Could not connect: ' . mysqli_error($con));
+    $check_mark = '<i class="fas fa-times" style="font-size:24px;color:red;"></i>';
 }
 
 //SELECTING DATABASE

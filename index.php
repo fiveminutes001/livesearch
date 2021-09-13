@@ -177,8 +177,8 @@ include "php/connect.php";
             <b>HOME<br />TEST</b>
         </h3>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><?php echo  $check_mark;
-                                                                        echo $con_status; ?></a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><?php echo  $check_mark . ' connection';
+                                                                        ?></a>
         <!--
 			<a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
 				>ABOUT ME</a
