@@ -10,7 +10,7 @@ include "php/connect.php";
 //get the q parameter from URL
 $q=$_GET["q"];
 
-include 'getData.php';
+include 'php/getData.php';
 
 // $xmlDoc=new DOMDocument();
 // $xmlDoc->load("links.xml");
