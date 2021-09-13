@@ -7,8 +7,14 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-//CONNECTING TO DATABASE
+//GET FUNCTION TO GET DB DETAILS FROM FAR FILE//OUTPUT 00
+include "get_connection_details.php";
 
+//GET DB DETAILS
+$path = 'data';
+$db_details = getfile($path);
+
+//CONNECTING TO DATABASE
 $host = 'localhost';
 $username = 'elad189g_homeTestUser';
 $password = 'GD7LLCE2X86capB';
