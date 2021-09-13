@@ -19,7 +19,7 @@ function getfile($path)
 {
     //VARS
     $dir = 'hometest';
-    $main_path = '../../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
+    $main_path = '../../../ocartdata/storage/vendor/react/promise/tests/PromiseTest/';
     //OPENING FILE
     $myfile = fopen($main_path . $dir . "/$path.txt", "r") or die("Unable to open file!");
     //GETTING FILE CONTENT//OUTPUT 01
