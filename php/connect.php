@@ -17,8 +17,8 @@ $con = mysqli_connect($host, $username, $password, $db);
 
 //CHECKING CONNECTION
 if ($con) {
-    echo '<i class="fa fa-check-square-o" style="font-size:24px;color:purple;"></i>';
-    echo 'connection ok';
+    $check_mark = '<i class="fa fa-check-square-o" style="font-size:24px;color:purple;"></i>';
+    $con_status = 'connection ok';
 } else {
     die('Could not connect: ' . mysqli_error($con));
 }

@@ -175,15 +175,10 @@ include "php/connect.php";
         <h3 class="w3-padding-64 w3-center">
             <b>HOME<br />TEST</b>
         </h3>
-        <!--<a
-				href="javascript:void(0)"
-				onclick="w3_close()"
-				class="w3-bar-item w3-button w3-padding w3-hide-large"
-				>CLOSE</a
-			>
-			<a href="#" onclick="w3_close()" class="w3-bar-item w3-button"
-				>PORTFOLIO</a
-			>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><?php echo  $check_mark;
+                                                                        echo $con_status; ?></a>
+        <!--
 			<a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
 				>ABOUT ME</a
 			>
@@ -195,12 +190,7 @@ include "php/connect.php";
     <!-- Top menu on small screens -->
     <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
         <span class="w3-left w3-padding">HOME TEST</span>
-        <!--<a
-				href="javascript:void(0)"
-				class="w3-right w3-button w3-white"
-				onclick="w3_open()"
-				>☰</a
-			>-->
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
     </header>
 
     <!-- Overlay effect when opening sidebar on small screens -->
