@@ -19,6 +19,7 @@ include "php/connect.php";
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
 <script src="https://kit.fontawesome.com/541602f357.js" crossorigin="anonymous"></script>
+<script src="js/getData.js"></script>
 <style>
     body,
     h1,
@@ -103,7 +104,7 @@ include "php/connect.php";
         <!-- End page content -->
     </div>
     <!-- Search box -->
-    <script src="js/getData.js"></script>
+    
     <script>
         
         
