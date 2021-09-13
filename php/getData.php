@@ -6,8 +6,8 @@ $result = mysqli_query($con,$sql);
 echo '<pre>';
 var_dump($sql);
 
-$row = mysqli_fetch_array($result);
-var_dump($row);
+while($row = mysqli_fetch_array($result)) {
+var_dump($row);}
 
 var_dump($con);
 echo '</pre>';
