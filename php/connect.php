@@ -1,12 +1,5 @@
 <?php
 
-//SESSION START	
-session_start();
-
-//ERRORS DISPLAY
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
 //GET FUNCTION TO GET DB DETAILS FROM FAR FILE//OUTPUT 00
 include "get_connection_details.php";
 
