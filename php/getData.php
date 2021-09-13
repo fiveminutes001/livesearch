@@ -7,6 +7,7 @@ echo '<pre>';
 var_dump($sql);
 
 while($row = mysqli_fetch_array($result)) {
+echo count($row);}
 var_dump($row);}
 
 var_dump($con);
