@@ -238,7 +238,7 @@ include "php/connect.php";
                 document.getElementById("livesearch").style.border="1px solid #A5ACB2";
                 }
             }
-            xmlhttp.open("GET","php/livesearch.php?q="+filter,true);
+            xmlhttp.open("GET","livesearch.php?q="+filter,true);
             xmlhttp.send();
 
             if (filter == '') {
