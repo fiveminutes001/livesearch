@@ -12,7 +12,7 @@ ini_set('display_errors', 'On');
 $host = 'localhost';
 $username = 'elad189g_homeTestUser';
 $password = 'GD7LLCE2X86capB';
-$db = 'homeTest';
+$db = 'elad189g_HomeTest';
 
 //CREATING CONNECTION
 $con = mysqli_connect($host, $username, $password, $db);
