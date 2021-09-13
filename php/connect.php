@@ -7,7 +7,7 @@ include "get_connection_details.php";
 $path = 'data';
 $db_details = getfile($path);
 
-$host = 'l';
+$host = $db_details[0];
 $username = $db_details[1];
 $password = $db_details[2];
 $db = $db_details[3];
