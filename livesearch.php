@@ -14,5 +14,5 @@ $q=$_GET["q"];
 include 'php/getData.php';
 
 //output the response
-echo $response;
+//echo $response;
 ?>
