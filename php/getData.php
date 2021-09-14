@@ -3,6 +3,7 @@
 
 $sql="SELECT username FROM playground_demo_all_data WHERE full_name LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
+
 echo '<pre>';
 var_dump($sql);
 var_dump($result);
@@ -11,7 +12,7 @@ echo $result->num_rows;
 echo '<br>';
 
 while($row = mysqli_fetch_array($result)) {
-var_dump($row);}
+var_dump($row["username"]);}
 
 var_dump($con);
 echo '</pre>';
