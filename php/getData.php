@@ -4,20 +4,24 @@
 class query {
 // 	// property declaration
     public $column;
+    public $result;
     public $results_array = [];
+    public $sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
     
-	public function __construct($column)
+	public function __construct($column,$con,$q)
 	{
-			$this->$column = $column;
+			$this->column = $column;
+            $this->query_results($column,$con,$q);
+            $this->query_results_to_array($this->results_array, $this->result,$column);
+            $this->output_text($sql,$this->result,$column);
 	}
 	
 	// method declaration
-    public function query_results($column){
-        $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-        $result = mysqli_query($con,$sql);
+    private function query_results($sql,$con){        
+        $this->result = mysqli_query($con,$sql);
     }    
     
-    public function query_results_to_array($arr, $result,$column){
+    private function query_results_to_array($arr, $result,$column){
         while($row = mysqli_fetch_array($result)) {
             array_push($arr,$row["username"]);
         }
@@ -35,7 +39,7 @@ class query {
     }
 
     //output text
-    public function output_text($sql,$result,$column){
+    private function output_text($sql,$result,$column){
         echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
         echo '<b>Query:</b> <br><br>'.$sql.'<br><br>';
         echo '<b>Status:</b> <br><br>found '.$result->num_rows.' results in '.$column.' field.<br><br>';
@@ -48,9 +52,7 @@ echo '<pre>';
 
 //mail
 
-$mail = new query('mail');
-$mail->output_text($sql,$result,$column);
-$mail->query_results_to_array($results_array[$column],$result,$column);
+$mail = new query('mail',$con,$q);
 
 //username
 $column = 'username';
