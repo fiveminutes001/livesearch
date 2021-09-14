@@ -7,6 +7,7 @@ class query {
     public $column;
     public $result;
     public $results_array = [];
+    public $top_five_results_array = [];
     public $sql;
     public $q;
     
@@ -36,7 +37,9 @@ class query {
         while($row = mysqli_fetch_array($this->result)) {
             array_push($arr,$row["username"]);
         }
-     
+        
+        $this->top_five_results_array = $arr;
+
         if(count($arr) && $this->q!=''){
             foreach($arr as $key => $value)
             {
@@ -46,7 +49,7 @@ class query {
             echo 'No results found';
         }
         echo '</pre>';
-        return $this;;
+        return $this;
     }
 
     //output text
@@ -58,30 +61,35 @@ class query {
 
         return $this;
     }
+
+    //return top_five_results_array
+    public function return_top_five_results_array(){
+        return $this->top_five_results_array;
+    }
 }
 
 //triple columns functions
-//full_name and mail
+//full_name and mail and username
 $full_name_and_mail_and_username = new query('full_name',$con, $q,'mail','username');
 $full_name_and_mail_and_username->query_results()->output_text()->query_results_to_array();
 
 //double columns functions
 //full_name and mail
-$full_name_and_username = new query('full_name',$con, $q,'mail');
-$full_name_and_username->query_results()->output_text()->query_results_to_array();
+$full_name_and_mail = new query('full_name',$con, $q,'mail');
+$full_name_and_mail->query_results()->output_text()->query_results_to_array();
 
 //full_name and username
 $full_name_and_username = new query('full_name',$con, $q,'username');
 $full_name_and_username->query_results()->output_text()->query_results_to_array();
 
-//username and mail
-$full_name_and_username = new query('mail',$con, $q,'username');
-$full_name_and_username->query_results()->output_text()->query_results_to_array();
+//mail and username
+$mail_and_username = new query('mail',$con, $q,'username');
+$mail_name_and_username->query_results()->output_text()->query_results_to_array();
 
 //single columns functions
 //full_name
 $full_name = new query('full_name',$con, $q);
-$full_name->query_results()->output_text()->query_results_to_array();
+$full_name->query_results()->output_text()->query_results_to_array()->return_top_five_results_array();
 //mail
 $mail = new query('mail',$con, $q);
 $mail->query_results()->output_text()->query_results_to_array();
