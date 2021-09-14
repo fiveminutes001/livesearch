@@ -4,8 +4,8 @@
 $sql="SELECT username FROM playground_demo_all_data WHERE full_name LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
 
-echo '<pre>';
-var_dump($sql);
+echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
+echo 'Query: '.$sql;
 //var_dump($result);
 echo '<br>';
 echo 'found '.$result->num_rows.' results.';
