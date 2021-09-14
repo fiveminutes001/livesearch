@@ -53,7 +53,7 @@ $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$
 $result = mysqli_query($con,$sql);
 $results_array[$column] = [];
 $mail = new query();
-$mail->query_results_to_array($sql,$result,$column);
+$mail->output_text($sql,$result,$column);
 $mail->query_results_to_array($results_array[$column],$result,$column);
 
 //username
