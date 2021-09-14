@@ -114,7 +114,7 @@ echo '</pre>';
 
 //username
 $column = 'username';
-$sql="SELECT ".$column." FROM playground_demo_all_data WHERE username LIKE '%".$q."%' LIMIT 5";
+$sql="SELECT full_name FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
 $results_array[$column] = [];
 
@@ -129,7 +129,7 @@ echo '</pre>';
 
 //username
 $column = 'full_name';
-$sql="SELECT ".$column." FROM playground_demo_all_data WHERE username LIKE '%".$q."%' LIMIT 5";
+$sql="SELECT full_name FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
 $results_array[$column] = [];
 
