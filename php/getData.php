@@ -54,13 +54,16 @@ class query {
     }
 }
 
-echo '<pre>';
-// functions
-
+//functions
+//full_name
+$full_name = new query('full_name',$con, $q);
+$full_name->query_results()->output_text()->query_results_to_array();
 //mail
-
 $mail = new query('mail',$con, $q);
 $mail->query_results()->output_text()->query_results_to_array();
+//username
+$username = new query('username',$con, $q);
+$username->query_results()->output_text()->query_results_to_array();
 
 //username
 // $column = 'username';
