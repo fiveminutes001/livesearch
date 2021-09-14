@@ -21,7 +21,7 @@ class query {
         $two_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' AND ".$column_two." LIKE '".$q."%' LIMIT 5";
         $three_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' AND ".$column_two." LIKE '".$q."%' AND ".$column_three." LIKE '".$q."%' LIMIT 5";
         
-        $this->sql = ($column&&$column_two&&$column_three ? $three_column_sql :($column&&$column_two))? $two_column_sql : $single_column_sql;
+        $this->sql = $column && $column_two && $column_three ? $three_column_sql :(($column&&$column_two)? $two_column_sql : $single_column_sql);
    	}
 	
 	// method declaration
