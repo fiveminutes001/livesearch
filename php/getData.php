@@ -125,4 +125,4 @@ $username = new query('department',$con, $q);
 $top_five_results_array_local = $username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
 $top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
-echo json_encode($top_five_results_array_overall);
+$response = json_encode($top_five_results_array_overall);

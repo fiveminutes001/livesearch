@@ -49,7 +49,7 @@ include 'php/getData.php';
 // } else {
 //   $response=$hint;
 // }
-$response = $q;
+//$response = $q;
 //output the response
 echo $response;
 ?>
