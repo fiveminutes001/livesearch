@@ -3,21 +3,20 @@
 
 class query {
 // 	// property declaration
-//     public $content;
-//     public $green_link;
-//     public $red_link;
-//     public $current_link;
-
-	// public function __construct($sql = null ,$result = null ,$column = null, $arr = null)
-	// {
-	// 		$this->$arr = $arr;
-	// 		$this->$arr = $arr;
-	// 		$this->$arr = $arr;
-	// 		$this->$arr = $arr;
-	// }
+    public $column;
+    public $results_array = [];
+    
+	public function __construct($column)
+	{
+			$this->$column = $column;
+	}
 	
 	// method declaration
-
+    public function query_results($column){
+        $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
+        $result = mysqli_query($con,$sql);
+    }    
+    
     public function query_results_to_array($arr, $result,$column){
         while($row = mysqli_fetch_array($result)) {
             array_push($arr,$row["username"]);
@@ -48,11 +47,8 @@ echo '<pre>';
 // functions
 
 //mail
-$column = 'mail';
-$sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-$result = mysqli_query($con,$sql);
-$results_array[$column] = [];
-$mail = new query();
+
+$mail = new query('mail');
 $mail->output_text($sql,$result,$column);
 $mail->query_results_to_array($results_array[$column],$result,$column);
 
