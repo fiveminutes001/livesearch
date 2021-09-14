@@ -13,7 +13,7 @@ echo '<br>';
 echo '<br>';
 
 while($row = mysqli_fetch_array($result)) {
-echo($row["username"]);}
+echo $row["username"].'<br>';}
 
 //var_dump($con);
 echo '</pre>';
