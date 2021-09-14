@@ -84,7 +84,7 @@ $full_name_and_username->query_results()->output_text()->query_results_to_array(
 
 //mail and username
 $mail_and_username = new query('mail',$con, $q,'username');
-$mail_name_and_username->query_results()->output_text()->query_results_to_array();
+$mail_and_username->query_results()->output_text()->query_results_to_array();
 
 //single columns functions
 //full_name
