@@ -1,7 +1,7 @@
 <?php
 //echo 'q from livesearch.php: '.$q;
 
-class query {
+class singleQuery {
     
     // property declaration
     public $column;
@@ -10,12 +10,18 @@ class query {
     public $sql;
     public $q;
     
-	public function __construct($column,$con,$q)
+	public function __construct($column,$con,$q,$column_two = null, $column_three = null)
 	{
-			$this->column = $column;
-			$this->q = $q;
-			$this->con = $con;
-			$this->sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
+       
+        $this->column = $column;
+        $this->q = $q;
+        $this->con = $con;
+        
+        $single_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' LIMIT 5";
+        $two_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' AND ".$column_two." LIKE '".$q."%' LIMIT 5";
+        $three_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' AND ".$column_two." LIKE '".$q."%' AND ".$column_three." LIKE '".$q."%' LIMIT 5";
+        
+        $this->sql = ($column&&$column_two&&$column_three ? $three_column_sql :($column&&$column_two))? $two_column_sql : $single_column_sql;
    	}
 	
 	// method declaration
@@ -56,13 +62,13 @@ class query {
 
 //functions
 //full_name
-$full_name = new query('full_name',$con, $q);
+$full_name = new singleQuery('full_name',$con, $q);
 $full_name->query_results()->output_text()->query_results_to_array();
 //mail
-$mail = new query('mail',$con, $q);
+$mail = new singleQuery('mail',$con, $q);
 $mail->query_results()->output_text()->query_results_to_array();
 //username
-$username = new query('username',$con, $q);
+$username = new singleQuery('username',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
 
 // echo "<table>
