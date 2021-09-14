@@ -70,7 +70,7 @@ class query {
 
 function return_top_five_results_array_overall ($top_five_results_array_overall,$top_five_results_array_local)
 {
-    $result = count($top_five_results_array_overall)>5 ? $top_five_results_array_overall : array_merge($top_five_results_array_overall,$top_five_results_array_local);
+    $result = count($top_five_results_array_overall)>4 ? $top_five_results_array_overall : array_merge($top_five_results_array_overall,$top_five_results_array_local);
     
     echo '<pre style="padding:0px 8px;white-space:pre-wrap;background-color:yellow;">';
     echo '<b>top_five_results_array_overall so far:</b> <br><br>';
