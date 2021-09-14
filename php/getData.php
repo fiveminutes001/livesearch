@@ -13,13 +13,15 @@ echo '<br>';
 echo '<br>';
 echo '<b>Results:</b> <br><br>';
 
-$rows_array = [];
+$full_name_results_array = [];
 
+//query results to array
 while($row = mysqli_fetch_array($result)) {
-    array_push($rows_array,$row["username"]);
-    echo $row["username"].'<br>';}
-echo 'rows array:';
-var_dump($rows_array);
+    array_push($full_name_results_array,$row["username"]);
+}
+
+echo '$full_name_results_array:';
+var_dump($full_name_results_array);
 
 //var_dump($con);
 echo '</pre>';
