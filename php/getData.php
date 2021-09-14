@@ -11,7 +11,7 @@ echo '<br><br>';
 echo '<b>Status:</b> <br><br> found '.$result->num_rows.' results.';
 echo '<br>';
 echo '<br>';
-echo '<b>Results:</b> <br><br>
+echo '<b>Results:</b> <br><br>';
 
 
 while($row = mysqli_fetch_array($result)) {
