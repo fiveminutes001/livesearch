@@ -122,8 +122,6 @@ $results_array[$column] = [];
 //var_dump($result);
 //var_dump($con);
 
-/
-
 output_text($sql,$result,$column);
 query_results_to_array($results_array['username'],$result,$column);
 
