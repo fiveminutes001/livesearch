@@ -70,7 +70,7 @@ class query {
 
 function show_top_five_results_array_overall ($top_five_results_array_overall)
 {
-    echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
+    echo '<pre style="padding:0px 8px;white-space:pre-wrap;background-color:yellow;">';
     echo '<b>top_five_results_array_overall so far:</b> <br><br>';
     var_dump($top_five_results_array_overall);
     echo '</pre>';
