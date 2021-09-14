@@ -57,7 +57,7 @@
 //query results to array
 function query_results_to_array($arr, $result,$column){
     while($row = mysqli_fetch_array($result)) {
-        array_push($arr,$row[$column]);
+        array_push($arr,$row["username"]);
     }
     
     if(count($arr)){
