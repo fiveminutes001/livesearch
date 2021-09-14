@@ -39,7 +39,7 @@ class query {
         } else {
             echo 'No results found';
         }
-
+        echo '</pre>';
         return $this;;
     }
 
@@ -64,14 +64,6 @@ $mail->query_results()->output_text()->query_results_to_array();
 //username
 $username = new query('username',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
-
-//username
-// $column = 'username';
-// $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-// $result = mysqli_query($con,$sql);
-// $results_array[$column] = [];
-
-echo '</pre>';
 
 // echo "<table>
 // <tr>
