@@ -8,9 +8,11 @@ echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
 echo '<b>Query:</b> <br><br>'.$sql;
 //var_dump($result);
 echo '<br><br>';
-echo '<b>Results:</b> <br><br> found '.$result->num_rows.' results.';
+echo '<b>Status:</b> <br><br> found '.$result->num_rows.' results.';
 echo '<br>';
 echo '<br>';
+echo '<b>Results:</b> <br><br>
+
 
 while($row = mysqli_fetch_array($result)) {
 echo $row["username"].'<br>';}
