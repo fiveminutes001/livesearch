@@ -1,7 +1,7 @@
 <?php
 //echo 'q from livesearch.php: '.$q;
 
-class singleQuery {
+class query {
     
     // property declaration
     public $column;
@@ -60,21 +60,29 @@ class singleQuery {
     }
 }
 
+
+
+//more functions
+//full_name
+$full_name_and_username = new query('full_name',$con, $q,'username');
+$full_name_and_username->query_results()->output_text()->query_results_to_array();
+
+
 //functions
 //full_name
-$full_name = new singleQuery('full_name',$con, $q);
+$full_name = new query('full_name',$con, $q);
 $full_name->query_results()->output_text()->query_results_to_array();
 //mail
-$mail = new singleQuery('mail',$con, $q);
+$mail = new query('mail',$con, $q);
 $mail->query_results()->output_text()->query_results_to_array();
 //username
-$username = new singleQuery('username',$con, $q);
+$username = new query('username',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
 //region
-$username = new singleQuery('region',$con, $q);
+$username = new query('region',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
 //department
-$username = new singleQuery('department',$con, $q);
+$username = new query('department',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
 
 // echo "<table>
