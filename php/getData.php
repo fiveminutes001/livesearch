@@ -1,7 +1,6 @@
 <?php
 //echo 'q from livesearch.php: '.$q;
 
-
 class query {
 // 	// property declaration
 //     public $content;
@@ -45,6 +44,7 @@ class query {
     }
 }
 
+echo '<pre>';
 // functions
 
 //mail
@@ -61,20 +61,6 @@ $column = 'username';
 $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
 $results_array[$column] = [];
-
-output_text($sql,$result,$column);
-query_results_to_array($results_array[$column],$result,$column);
-
-echo '</pre>';
-
-//full name
-$column = 'full_name';
-$sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-$result = mysqli_query($con,$sql);
-$results_array[$column] = [];
-
-output_text($sql,$result,$column);
-query_results_to_array($results_array[$column],$result,$column);
 
 echo '</pre>';
 
