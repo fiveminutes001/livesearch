@@ -61,6 +61,9 @@ class query {
 }
 
 //triple columns functions
+//full_name and mail
+$full_name_and_mail_and_username = new query('full_name',$con, $q,'mail','username');
+$full_name_and_mail_and_username->query_results()->output_text()->query_results_to_array();
 
 //double columns functions
 //full_name and mail
