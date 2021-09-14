@@ -20,8 +20,14 @@ while($row = mysqli_fetch_array($result)) {
     array_push($full_name_results_array,$row["username"]);
 }
 
-$a = count($full_name_results_array);
-$message = ($a>0) ? var_dump($full_name_results_array) : 'No results found';
+if(count($full_name_results_array)){
+    foreach($full_name_results_array as $key => $value)
+    {
+        echo $value."<br>";
+    }
+} else {
+    echo 'No results found';
+}
 
 //var_dump($con);
 echo '</pre>';
