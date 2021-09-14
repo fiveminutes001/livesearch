@@ -61,10 +61,10 @@ $mail = new query('mail',$con, $q);
 $mail->query_results()->query_results_to_array()->output_text();
 
 //username
-$column = 'username';
-$sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-$result = mysqli_query($con,$sql);
-$results_array[$column] = [];
+// $column = 'username';
+// $sql="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
+// $result = mysqli_query($con,$sql);
+// $results_array[$column] = [];
 
 echo '</pre>';
 
