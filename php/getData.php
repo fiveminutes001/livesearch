@@ -68,12 +68,16 @@ class query {
     }
 }
 
-function show_top_five_results_array_overall ($top_five_results_array_overall)
+function return_top_five_results_array_overall ($top_five_results_array_overall,$top_five_results_array_local)
 {
+    $result = count($top_five_results_array_overall)>5 ? $top_five_results_array_overall : array_merge($top_five_results_array_overall,$top_five_results_array_local);
+    
     echo '<pre style="padding:0px 8px;white-space:pre-wrap;background-color:yellow;">';
     echo '<b>top_five_results_array_overall so far:</b> <br><br>';
     var_dump($top_five_results_array_overall);
     echo '</pre>';
+
+    return $result;
 }
 
 //top five results array
@@ -83,53 +87,44 @@ $top_five_results_array_overall = [];
 //triple columns functions
 //full_name and mail and username
 $full_name_and_mail_and_username = new query('full_name',$con, $q,'mail','username');
-$full_name_and_mail_and_username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $full_name_and_mail_and_username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
 //double columns functions
 //full_name and mail
 $full_name_and_mail = new query('full_name',$con, $q,'mail');
-$full_name_and_mail->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $full_name_and_mail->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
 //full_name and username
 $full_name_and_username = new query('full_name',$con, $q,'username');
-$full_name_and_username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $full_name_and_username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
 //mail and username
 $mail_and_username = new query('mail',$con, $q,'username');
 $top_five_results_array_local = $mail_and_username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
 //single columns functions
 //full_name
 $full_name = new query('full_name',$con, $q);
 $top_five_results_array_local = $full_name->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 
 //mail
 $mail = new query('mail',$con, $q);
-$mail->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $mail->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 //username
 $username = new query('username',$con, $q);
-$username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 //region
 $username = new query('region',$con, $q);
-$username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
 //department
 $username = new query('department',$con, $q);
-$username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
-$top_five_results_array_overall = array_merge($top_five_results_array_overall,$top_five_results_array_local);
-show_top_five_results_array_overall($top_five_results_array_overall);
+$top_five_results_array_local = $username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
+$top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
