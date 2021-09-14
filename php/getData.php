@@ -70,6 +70,12 @@ $mail->query_results()->output_text()->query_results_to_array();
 //username
 $username = new singleQuery('username',$con, $q);
 $username->query_results()->output_text()->query_results_to_array();
+//region
+$username = new singleQuery('region',$con, $q);
+$username->query_results()->output_text()->query_results_to_array();
+//department
+$username = new singleQuery('department',$con, $q);
+$username->query_results()->output_text()->query_results_to_array();
 
 // echo "<table>
 // <tr>
