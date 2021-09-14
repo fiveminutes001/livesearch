@@ -8,14 +8,14 @@ echo '<pre>';
 var_dump($sql);
 //var_dump($result);
 echo '<br>';
-echo 'found '.$result->num_rows.' results:';
+echo 'found '.$result->num_rows.' results.';
 echo '<br>';
 echo '<br>';
 
 while($row = mysqli_fetch_array($result)) {
-var_dump($row["username"]);}
+echo($row["username"]);}
 
-var_dump($con);
+//var_dump($con);
 echo '</pre>';
 
 // echo "<table>
