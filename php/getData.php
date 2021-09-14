@@ -3,17 +3,16 @@
 
 $sql="SELECT username FROM playground_demo_all_data WHERE full_name LIKE '%".$q."%' LIMIT 5";
 $result = mysqli_query($con,$sql);
+$full_name_results_array = [];
+
+//debugging
+//var_dump($result);
+//var_dump($con);
 
 echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
-echo '<b>Query:</b> <br><br>'.$sql;
-//var_dump($result);
-echo '<br><br>';
-echo '<b>Status:</b> <br><br> found '.$result->num_rows.' results.';
-echo '<br>';
-echo '<br>';
+echo '<b>Query:</b> <br><br>'.$sql.'<br><br>';
+echo '<b>Status:</b> <br><br>found '.$result->num_rows.' results in full_name field.<br><br>';
 echo '<b>Results:</b> <br><br>';
-
-$full_name_results_array = [];
 
 //query results to array
 while($row = mysqli_fetch_array($result)) {
@@ -29,7 +28,6 @@ if(count($full_name_results_array)){
     echo 'No results found';
 }
 
-//var_dump($con);
 echo '</pre>';
 
 // echo "<table>
