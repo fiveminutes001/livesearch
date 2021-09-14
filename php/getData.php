@@ -6,14 +6,15 @@ class query {
     public $column;
     public $result;
     public $results_array = [];
-    public $sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
+    public $sql;
     
 	public function __construct($column,$con,$q)
 	{
 			$this->column = $column;
+			$this->sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
             $this->query_results($column,$con,$q);
             $this->query_results_to_array($this->results_array, $this->result,$column);
-            $this->output_text($sql,$this->result,$column);
+            $this->output_text($this->sql,$this->result,$column);
 	}
 	
 	// method declaration
