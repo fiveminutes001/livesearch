@@ -1,8 +1,8 @@
 <?php
 
 //display errors
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
 
 //get DB details
 include "php/connect.php";
