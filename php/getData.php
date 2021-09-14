@@ -60,7 +60,7 @@ echo '<pre>';
 //mail
 
 $mail = new query('mail',$con, $q);
-$mail->output_text()->query_results()->query_results_to_array();
+$mail->query_results()->query_results_to_array()->output_text();
 
 //username
 // $column = 'username';
