@@ -123,7 +123,22 @@ $results_array[$column] = [];
 //var_dump($con);
 
 output_text($sql,$result,$column);
-query_results_to_array($results_array['username'],$result,$column);
+query_results_to_array($results_array[$column],$result,$column);
+
+echo '</pre>';
+
+//username
+$column = 'full_name';
+$sql="SELECT ".$column." FROM playground_demo_all_data WHERE username LIKE '%".$q."%' LIMIT 5";
+$result = mysqli_query($con,$sql);
+$results_array[$column] = [];
+
+//debugging
+//var_dump($result);
+//var_dump($con);
+
+output_text($sql,$result,$column);
+query_results_to_array($results_array[$column],$result,$column);
 
 echo '</pre>';
 
