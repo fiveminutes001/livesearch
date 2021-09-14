@@ -6,9 +6,10 @@ $result = mysqli_query($con,$sql);
 
 echo '<pre>';
 var_dump($sql);
-var_dump($result);
+//var_dump($result);
 echo '<br>';
-echo $result->num_rows;
+echo 'found '.$result->num_rows.' results:';
+echo '<br>';
 echo '<br>';
 
 while($row = mysqli_fetch_array($result)) {
