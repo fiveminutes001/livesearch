@@ -60,15 +60,22 @@ class query {
     }
 }
 
+//triple columns functions
 
+//double columns functions
+//full_name and mail
+$full_name_and_username = new query('full_name',$con, $q,'mail');
+$full_name_and_username->query_results()->output_text()->query_results_to_array();
 
-//more functions
-//full_name
+//full_name and username
 $full_name_and_username = new query('full_name',$con, $q,'username');
 $full_name_and_username->query_results()->output_text()->query_results_to_array();
 
+//username and mail
+$full_name_and_username = new query('mail',$con, $q,'username');
+$full_name_and_username->query_results()->output_text()->query_results_to_array();
 
-//functions
+//single columns functions
 //full_name
 $full_name = new query('full_name',$con, $q);
 $full_name->query_results()->output_text()->query_results_to_array();
