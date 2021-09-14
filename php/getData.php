@@ -8,10 +8,12 @@ class query {
     public $result;
     public $results_array = [];
     public $sql;
+    public $q;
     
 	public function __construct($column,$con,$q)
 	{
 			$this->column = $column;
+			$this->q = $q;
 			$this->con = $con;
 			$this->sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
    	}
@@ -28,8 +30,8 @@ class query {
         while($row = mysqli_fetch_array($this->result)) {
             array_push($arr,$row["username"]);
         }
-        
-        if(count($arr)){
+     
+        if(count($arr) && $this->q!=''){
             foreach($arr as $key => $value)
             {
                 echo $value."<br>";
