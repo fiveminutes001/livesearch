@@ -2,7 +2,8 @@
 //echo 'q from livesearch.php: '.$q;
 
 class query {
-// 	// property declaration
+    
+    // property declaration
     public $column;
     public $result;
     public $results_array = [];
@@ -11,19 +12,20 @@ class query {
 	public function __construct($column,$con,$q)
 	{
 			$this->column = $column;
+			$this->con = $con;
 			$this->sql = "SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '%".$q."%' LIMIT 5";
-            $this->query_results($column,$con,$q);
-            $this->query_results_to_array($this->results_array, $this->result,$column);
-            $this->output_text($this->sql,$this->result,$column);
-	}
+   	}
 	
 	// method declaration
-    private function query_results($sql,$con){        
-        $this->result = mysqli_query($con,$sql);
+    public function query_results(){        
+        $this->result = mysqli_query($this->con,$this->sql);
+        return $this;
     }    
     
-    private function query_results_to_array($arr, $result,$column){
-        while($row = mysqli_fetch_array($result)) {
+    public function query_results_to_array(){
+       $arr = $this->results_array;
+
+        while($row = mysqli_fetch_array($this->result)) {
             array_push($arr,$row["username"]);
         }
         
@@ -36,15 +38,17 @@ class query {
             echo 'No results found';
         }
 
-        return $arr;
+        return $this;;
     }
 
     //output text
-    private function output_text($sql,$result,$column){
+    public function output_text(){
         echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
-        echo '<b>Query:</b> <br><br>'.$sql.'<br><br>';
-        echo '<b>Status:</b> <br><br>found '.$result->num_rows.' results in '.$column.' field.<br><br>';
+        echo '<b>Query:</b> <br><br>'.$this->sql.'<br><br>';
+        echo '<b>Status:</b> <br><br>found '.$this->result->num_rows.' results in '.$this->column.' field.<br><br>';
         echo '<b>Results:</b> <br><br>';
+
+        return $this;
     }
 }
 
@@ -53,7 +57,8 @@ echo '<pre>';
 
 //mail
 
-$mail = new query('mail',$con,$q);
+$mail = new query('mail',$con, $q);
+$mail->query_results()->query_results_to_array()->output_text();
 
 //username
 $column = 'username';
