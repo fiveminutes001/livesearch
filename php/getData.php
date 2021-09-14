@@ -1,5 +1,4 @@
 <?php
-//echo 'q from livesearch.php: '.$q;
 
 class query {
     
@@ -25,7 +24,6 @@ class query {
         $this->sql = $column && $column_two && $column_three ? $three_column_sql :(($column&&$column_two)? $two_column_sql : $single_column_sql);
    	}
 	
-	// method declaration
     public function query_results(){        
         $this->result = mysqli_query($this->con,$this->sql);
         return $this;
@@ -52,7 +50,6 @@ class query {
         return $this;
     }
 
-    //output text
     public function output_text(){
         echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
         echo '<b>Query:</b> <br><br>'.$this->sql.'<br><br>';
@@ -62,7 +59,6 @@ class query {
         return $this;
     }
 
-    //return top_five_results_array
     public function return_top_five_results_array_local(){
         return $this->top_five_results_array;
     }
@@ -80,7 +76,7 @@ function return_top_five_results_array_overall ($top_five_results_array_overall,
     return $result;
 }
 
-//top five results array
+//top five results array, local and overall
 $top_five_results_array_local = [];
 $top_five_results_array_overall = [];
 
@@ -128,3 +124,5 @@ $top_five_results_array_overall = return_top_five_results_array_overall($top_fiv
 $username = new query('department',$con, $q);
 $top_five_results_array_local = $username->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
 $top_five_results_array_overall = return_top_five_results_array_overall($top_five_results_array_overall,$top_five_results_array_local);
+
+echo json_encode($top_five_results_array_overall);
