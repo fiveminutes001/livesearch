@@ -63,10 +63,10 @@ include "php/connect.php";
         <a href="#" class="w3-bar-item w3-button"><?php echo  $check_mark . ' DB connection';
                                                                         ?></a>
         
-			<a href="javascript:void(0)" onclick="setDev()" class="w3-bar-item w3-button"
+			<a href="javascript:void(0)" class="w3-bar-item w3-button"
 				>
                 <label class="switch">
-                    <input type="checkbox" id="devSwitch">
+                    <input type="checkbox" id="devSwitch" onclick="setDev()">
                     <span class="slider round"></span>
                 </label> dev mode</a
 			>
