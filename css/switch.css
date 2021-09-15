@@ -59,4 +59,5 @@ input:checked + .slider:before {
 }
 
 .devMode {
+	width: 100%;
 }
