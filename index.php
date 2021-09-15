@@ -224,6 +224,8 @@ include "php/connect.php";
         
         
         function myFunction() {
+            document.getElementById("myMenu").innerHTML = '';
+            
             let input, filter, ul, li, a, i, dev;
             input = document.getElementById('mySearch');
             filter = input.value.toLowerCase();
@@ -244,8 +246,8 @@ include "php/connect.php";
             xmlhttp.send();
             
             ul = document.getElementById('myMenu');
-            
             li = ul.getElementsByTagName('li');
+            
             if (filter == '') {
                 for (i = 0; i < li.length; i++) {
                     li[i].classList.remove('w3-show');
