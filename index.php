@@ -165,7 +165,7 @@ include "php/connect.php";
                     addLi(topFiveArray);
                     }
                     else {
-                        document.getElementById('livesearch').innerHTML = responseText;
+                        document.getElementById('livesearch').innerHTML = this.responseText;
                     }
                 }
             }
