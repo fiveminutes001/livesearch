@@ -237,9 +237,7 @@ include "php/connect.php";
                 if (this.readyState==4 && this.status==200) {
                     let topFiveArray = JSON.parse(xmlhttp.responseText); 
                     console.log(topFiveArray);
-                document.getElementById("livesearch").innerHTML=this.responseText;
-                document.getElementById("livesearch").style.border="1px solid #A5ACB2";
-                addLi(topFiveArray);
+                    addLi(topFiveArray);
                 }
             }
             if (input.value)
