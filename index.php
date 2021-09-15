@@ -131,7 +131,7 @@ include "php/connect.php";
             filter = input.value.toLowerCase();
             dev = 0;
             
-            if (input.value !== null){
+            if (input.value !== ''){
             //sending AJAX request
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
