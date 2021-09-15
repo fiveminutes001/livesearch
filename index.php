@@ -70,9 +70,6 @@ include "php/connect.php";
                     <span class="slider round"></span>
                 </label> dev mode</a
 			>
-		<!--<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
-				>CONTACT</a
-			>-->
     </nav>
 
     <!-- Top menu on small screens -->
