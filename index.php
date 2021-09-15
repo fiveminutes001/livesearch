@@ -242,7 +242,7 @@ include "php/connect.php";
                 addLi(topFiveArray);
                 }
             }
-            if (!input.value)
+            if (input.value)
             {   xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
                 xmlhttp.send();
             }
