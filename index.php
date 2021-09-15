@@ -229,7 +229,7 @@ include "php/connect.php";
             filter = input.value.toLowerCase();
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
-            dev = 0;
+            dev = 1;
             //sending AJAX request
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
