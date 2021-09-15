@@ -243,7 +243,7 @@ include "php/connect.php";
             if (input.value)
             {   xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
                 xmlhttp.send();
-            }
+            } else {document.getElementById("myMenu").innerHTML = 'No results found.';}
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
                   
