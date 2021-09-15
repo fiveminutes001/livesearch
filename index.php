@@ -234,7 +234,7 @@ include "php/connect.php";
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
                 if (this.readyState==4 && this.status==200) {
-                    // console.log(JSON.parse(xmlhttp.responseText));
+                     console.log(JSON.parse(xmlhttp.responseText));
                 document.getElementById("livesearch").innerHTML=this.responseText;
                 document.getElementById("livesearch").style.border="1px solid #A5ACB2";
                 }
