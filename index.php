@@ -247,31 +247,10 @@ include "php/connect.php";
             
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
-            
-            if (filter == '') {
-                for (i = 0; i < li.length; i++) {
-                    li[i].classList.remove('w3-show');
-                    li[i].classList.add('w3-hide');
-                }
-            } else {
-                for (i = 0; i < li.length; i++) {
-                    if (li[i].innerHTML.toLowerCase().indexOf(filter) > -1) {
-                        
-                        li[i].classList.remove('w3-hide');
-                        li[i].classList.add('w3-show');
-                    } else {
-                        li[i].classList.remove('w3-show');
-                        li[i].classList.add('w3-hide');
-                    }
-                }
-            }
+                  
         }
     </script>
-    <!-- <script> 
-      document.addEventListener('DOMContentLoaded', addLi);
-    </script> -->
-
-    
+   
 	<script src="js/sideBar.js"></script>
 </body>
 
