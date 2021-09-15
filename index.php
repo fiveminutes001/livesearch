@@ -111,7 +111,7 @@ include "php/connect.php";
     <script>
          function setDev(){
             let devSwitch = document.querySelector('#devSwitch');
-            devSwitch.classList.toggle('devMode');
+            console.log(devSwitch.classList.contains('active'));
          }
          
          function addLi(dataFromDb){
