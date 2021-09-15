@@ -148,6 +148,7 @@ include "php/connect.php";
         
         function myFunction() {
             document.getElementById("myMenu").innerHTML = '';
+            document.getElementById("livesearch").innerHTML = '';
             
             let input, filter, ul, li, a, i, dev;
             input = document.getElementById('mySearch');
@@ -173,6 +174,7 @@ include "php/connect.php";
               xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
                 xmlhttp.send();
             } else {
+                document.getElementById("livesearch").innerHTML = '';
                 document.getElementById("myMenu").innerHTML = '';
                 document.getElementById("myMenu").innerHTML = '<li>No results found.</li>';}
         }
