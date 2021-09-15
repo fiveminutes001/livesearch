@@ -41,6 +41,7 @@ include "php/connect.php";
 
 </style>
 <link rel="stylesheet" href="css/searchBox.css" />
+<link rel="stylesheet" href="css/switch.css" />
 </head>
 <body class="w3-light-grey w3-content" style="max-width: 1600px">
     <!-- Sidebar/menu -->
@@ -61,11 +62,15 @@ include "php/connect.php";
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
         <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><?php echo  $check_mark . ' DB connection';
                                                                         ?></a>
-        <!--
-			<a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
-				>ABOUT ME</a
+        
+			<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button"
+				>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label></a
 			>
-			<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
+		<!--<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
 				>CONTACT</a
 			>-->
     </nav>
