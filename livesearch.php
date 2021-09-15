@@ -16,5 +16,5 @@ include 'php/getData.php';
 
 //output the response
 echo $response;
-//echo 'dev: '.$dev;
+
 ?>

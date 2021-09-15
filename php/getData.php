@@ -87,9 +87,10 @@ function return_top_five_results_array_overall ($dev,$obj,$top_five_results_arra
     return $result;
 }
 
-//top five results array, local and overall
+//top five results array, local and overall, and response
 $top_five_results_array_local = [];
 $top_five_results_array_overall = [];
+$response = '';
 
 //triple columns functions
 //full_name and mail and username
@@ -128,5 +129,5 @@ $department = new query('department',$con,$q,$dev);
 $top_five_results_array_overall = return_top_five_results_array_overall($dev,$department, $top_five_results_array_overall);
 
 if (!$dev){
-$response = json_encode($top_five_results_array_overall);
+    $response = json_encode($top_five_results_array_overall);
 }
