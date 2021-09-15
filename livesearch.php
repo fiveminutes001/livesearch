@@ -15,6 +15,6 @@ $dev=$_GET["dev"];
 include 'php/getData.php';
 
 //output the response
-//echo $response;
+echo $response;
 echo 'dev: '.$dev;
 ?>
