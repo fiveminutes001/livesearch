@@ -105,6 +105,9 @@ include "php/connect.php";
     <!-- Search box -->
     <script>
          function addLi(dataFromDb){
+            //discarding current content
+            document.getElementById("myMenu").innerHTML = '';
+            
             const fragment = document.createDocumentFragment();  
             
             for (let i = 0; i < dataFromDb.length; i++) {
@@ -128,6 +131,7 @@ include "php/connect.php";
             filter = input.value.toLowerCase();
             dev = 0;
             
+            if (input.value !== null){
             //sending AJAX request
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
@@ -137,8 +141,8 @@ include "php/connect.php";
                     addLi(topFiveArray);
                 }
             }
-            if (input.value)
-            {   xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
+           
+              xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
                 xmlhttp.send();
             } else {
                 document.getElementById("myMenu").innerHTML = '';
