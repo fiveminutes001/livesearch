@@ -66,7 +66,7 @@ include "php/connect.php";
 			<a href="javascript:void(0)" onclick="setDev()" class="w3-bar-item w3-button"
 				>
                 <label class="switch">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" id="devSwitch">
                     <span class="slider round"></span>
                 </label> dev mode</a
 			>
@@ -110,7 +110,8 @@ include "php/connect.php";
     <!-- Search box -->
     <script>
          function setDev(){
-            
+            let devSwitch = document.querySelector('#devSwitch');
+            devSwitch.classList.toggle('devMode');
          }
          
          function addLi(dataFromDb){
