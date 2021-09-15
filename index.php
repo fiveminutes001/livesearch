@@ -227,9 +227,8 @@ include "php/connect.php";
             let input, filter, ul, li, a, i, dev;
             input = document.getElementById('mySearch');
             filter = input.value.toLowerCase();
-            ul = document.getElementById('myMenu');
-            li = ul.getElementsByTagName('li');
             dev = 0;
+            
             //sending AJAX request
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
@@ -243,24 +242,27 @@ include "php/connect.php";
             }
             xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
             xmlhttp.send();
-
-            // if (filter == '') {
-            //     for (i = 0; i < li.length; i++) {
-            //         li[i].classList.remove('w3-show');
-            //         li[i].classList.add('w3-hide');
-            //     }
-            // } else {
-            //     for (i = 0; i < li.length; i++) {
-            //         if (li[i].innerHTML.toLowerCase().indexOf(filter) > -1) {
+            
+            ul = document.getElementById('myMenu');
+            
+            li = ul.getElementsByTagName('li');
+            if (filter == '') {
+                for (i = 0; i < li.length; i++) {
+                    li[i].classList.remove('w3-show');
+                    li[i].classList.add('w3-hide');
+                }
+            } else {
+                for (i = 0; i < li.length; i++) {
+                    if (li[i].innerHTML.toLowerCase().indexOf(filter) > -1) {
                         
-            //             li[i].classList.remove('w3-hide');
-            //             li[i].classList.add('w3-show');
-            //         } else {
-            //             li[i].classList.remove('w3-show');
-            //             li[i].classList.add('w3-hide');
-            //         }
-            //     }
-            // }
+                        li[i].classList.remove('w3-hide');
+                        li[i].classList.add('w3-show');
+                    } else {
+                        li[i].classList.remove('w3-show');
+                        li[i].classList.add('w3-hide');
+                    }
+                }
+            }
         }
     </script>
     <!-- <script> 
