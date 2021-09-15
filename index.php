@@ -242,9 +242,10 @@ include "php/connect.php";
                 addLi(topFiveArray);
                 }
             }
-            xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
-            xmlhttp.send();
-            
+            if (!input.value)
+            {   xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
+                xmlhttp.send();
+            }
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
                   
