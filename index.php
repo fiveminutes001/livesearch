@@ -67,7 +67,7 @@ include "php/connect.php";
 				>
                 <label class="switch">
                     <input type="checkbox" checked>
-                    <span class="slider round"></span>
+                    <span class="slider round"> dev mode</span>
                 </label></a
 			>
 		<!--<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
