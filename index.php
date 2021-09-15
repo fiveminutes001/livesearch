@@ -60,10 +60,10 @@ include "php/connect.php";
             <b>HOME<br />TEST</b>
         </h3>
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button"><?php echo  $check_mark . ' DB connection';
+        <a href="#" class="w3-bar-item w3-button"><?php echo  $check_mark . ' DB connection';
                                                                         ?></a>
         
-			<a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button"
+			<a href="javascript:void(0)" onclick="setDev()" class="w3-bar-item w3-button"
 				>
                 <label class="switch">
                     <input type="checkbox" checked>
@@ -109,6 +109,10 @@ include "php/connect.php";
     </div>
     <!-- Search box -->
     <script>
+         function setDev(){
+            
+         }
+         
          function addLi(dataFromDb){
             //discarding current content
             document.getElementById("myMenu").innerHTML = '';
