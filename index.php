@@ -224,21 +224,22 @@ include "php/connect.php";
         
         
         function myFunction() {
-            var input, filter, ul, li, a, i;
+            let input, filter, ul, li, a, i,dev;
             input = document.getElementById('mySearch');
             filter = input.value.toLowerCase();
             ul = document.getElementById('myMenu');
             li = ul.getElementsByTagName('li');
-            
+            dev = 0;
             //sending AJAX request
-            var xmlhttp=new XMLHttpRequest();
+            const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
                 if (this.readyState==4 && this.status==200) {
+                    console.log(JSON.parse(xmlhttp.responseText));
                 document.getElementById("livesearch").innerHTML=this.responseText;
                 document.getElementById("livesearch").style.border="1px solid #A5ACB2";
                 }
             }
-            xmlhttp.open("GET","livesearch.php?q="+input.value,true);
+            xmlhttp.open("GET","livesearch.php?q="+input.value+"?dev="+dev,true);
             xmlhttp.send();
 
             if (filter == '') {
