@@ -4,6 +4,7 @@ class query {
     
     // property declaration
     public $column;
+    public $column_title;
     public $result;
     public $results_array = [];
     public $top_five_results_array = [];
@@ -22,6 +23,7 @@ class query {
         $three_column_sql ="SELECT username FROM playground_demo_all_data WHERE ".$column." LIKE '".$q."%' AND ".$column_two." LIKE '".$q."%' AND ".$column_three." LIKE '".$q."%' LIMIT 5";
         
         $this->sql = $column && $column_two && $column_three ? $three_column_sql :(($column&&$column_two)? $two_column_sql : $single_column_sql);
+        $this->column_title = $column && $column_two && $column_three ? $column." and ".$column_two." and ".$column_three. " columns." :(($column&&$column_two)? $column." and ".$column_two." columns." : $column." column.");
    	}
 	
     public function query_results(){        
@@ -53,7 +55,7 @@ class query {
     public function output_text(){
         echo '<pre style="padding:0px 8px;white-space:pre-wrap;">';
         echo '<b>Query:</b> <br><br>'.$this->sql.'<br><br>';
-        echo '<b>Status:</b> <br><br>found '.$this->result->num_rows.' results in '.$this->column.' field.<br><br>';
+        echo '<b>Status:</b> <br><br>found '.$this->result->num_rows.' results in '.$this->column_title.'<br><br>';
         echo '<b>Results:</b> <br><br>';
 
         return $this;
