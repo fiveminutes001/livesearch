@@ -244,23 +244,23 @@ include "php/connect.php";
             xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
             xmlhttp.send();
 
-            if (filter == '') {
-                for (i = 0; i < li.length; i++) {
-                    li[i].classList.remove('w3-show');
-                    li[i].classList.add('w3-hide');
-                }
-            } else {
-                for (i = 0; i < li.length; i++) {
-                    if (li[i].innerHTML.toLowerCase().indexOf(filter) > -1) {
+            // if (filter == '') {
+            //     for (i = 0; i < li.length; i++) {
+            //         li[i].classList.remove('w3-show');
+            //         li[i].classList.add('w3-hide');
+            //     }
+            // } else {
+            //     for (i = 0; i < li.length; i++) {
+            //         if (li[i].innerHTML.toLowerCase().indexOf(filter) > -1) {
                         
-                        li[i].classList.remove('w3-hide');
-                        li[i].classList.add('w3-show');
-                    } else {
-                        li[i].classList.remove('w3-show');
-                        li[i].classList.add('w3-hide');
-                    }
-                }
-            }
+            //             li[i].classList.remove('w3-hide');
+            //             li[i].classList.add('w3-show');
+            //         } else {
+            //             li[i].classList.remove('w3-show');
+            //             li[i].classList.add('w3-hide');
+            //         }
+            //     }
+            // }
         }
     </script>
     <!-- <script> 
