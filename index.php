@@ -224,7 +224,7 @@ include "php/connect.php";
         
         
         function myFunction() {
-            let input, filter, ul, li, a, i,dev;
+            let input, filter, ul, li, a, i, dev;
             input = document.getElementById('mySearch');
             filter = input.value.toLowerCase();
             ul = document.getElementById('myMenu');
@@ -239,7 +239,7 @@ include "php/connect.php";
                 document.getElementById("livesearch").style.border="1px solid #A5ACB2";
                 }
             }
-            xmlhttp.open("GET","livesearch.php?q="+input.value+"?dev="+dev,true);
+            xmlhttp.open("GET","livesearch.php?q="+input.value+"&dev="+dev,true);
             xmlhttp.send();
 
             if (filter == '') {
