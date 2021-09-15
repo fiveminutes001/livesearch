@@ -113,12 +113,19 @@ include "php/connect.php";
             let devSwitch = document.querySelector('#devSwitch');
             if(devSwitch.classList.contains('active')){
                 devSwitch.classList.remove('active');
-                console.log(0);
             } else {
                 devSwitch.classList.add('active');
-                console.log(1);
             };
          }
+
+         function getDev(){
+            let devSwitch = document.querySelector('#devSwitch');
+            if(devSwitch.classList.contains('active')){
+               return 1;
+            } else { return 0 ;};
+         }
+
+         
          
          function addLi(dataFromDb){
             //discarding current content
@@ -145,7 +152,7 @@ include "php/connect.php";
             let input, filter, ul, li, a, i, dev;
             input = document.getElementById('mySearch');
             filter = input.value.toLowerCase();
-            dev = 0;
+            dev = getDev();
             
             if (input.value !== ''){
             //sending AJAX request
