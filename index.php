@@ -159,9 +159,14 @@ include "php/connect.php";
             const xmlhttp=new XMLHttpRequest();
             xmlhttp.onreadystatechange=function() {
                 if (this.readyState==4 && this.status==200) {
+                    if(!dev){
                     let topFiveArray = JSON.parse(xmlhttp.responseText); 
                     console.log(topFiveArray);
                     addLi(topFiveArray);
+                    }
+                    else {
+                        document.getElementById('livesearch').innerHTML = responseText;
+                    }
                 }
             }
            

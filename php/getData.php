@@ -127,4 +127,6 @@ $top_five_results_array_overall = return_top_five_results_array_overall($dev,$re
 $department = new query('department',$con,$q,$dev);
 $top_five_results_array_overall = return_top_five_results_array_overall($dev,$department, $top_five_results_array_overall);
 
+if (!$dev){
 $response = json_encode($top_five_results_array_overall);
+}
