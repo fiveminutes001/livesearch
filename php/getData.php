@@ -70,7 +70,7 @@ function return_top_five_results_array_overall ($obj,$top_five_results_array_ove
 {
     $top_five_results_array_local = $obj->query_results()->output_text()->query_results_to_array()->return_top_five_results_array_local();
     
-    $result = count($top_five_results_array_overall)>4 ? array_slice($top_five_results_array_overall, 0, 5, true) : array_merge($top_five_results_array_overall,$top_five_results_array_local);
+    $result = count($top_five_results_array_overall)>4 ? array_slice($top_five_results_array_overall, 0, 5, true) : array_slice(array_merge($top_five_results_array_overall,$top_five_results_array_local), 0, 5, true);
     
     echo '<pre style="padding:0px 8px;white-space:pre-wrap;background-color:yellow;">';
     echo '<b>top_five_results_array_overall so far:</b> <br><br>';
